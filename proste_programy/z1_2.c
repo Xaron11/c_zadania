@@ -15,9 +15,11 @@ int main() {
 
     } while (b == 0);
 
-    int c = a * (a + b) / ((a + b) * (a + b));
+    double ad = (double)a;
+    double bd = (double)b;
+    double c = ad * (ad + bd) / ((ad + bd) * (ad + bd));
 
-    printf("Wartosc wyrazenia to: %d\n", c);
+    printf("Wartosc wyrazenia to: %lf\n", c);
 
     return 0;
 }
