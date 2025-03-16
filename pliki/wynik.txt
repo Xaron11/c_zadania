@@ -1,0 +1,10 @@
+A. Line 1
+  1. Line 2
+    a. Line 3
+    b. Line 4
+      (1) Line 5
+        (a) Line 6
+        (b) Line 7
+  2. Line 8
+B. Line 9
+  1. Line 10
