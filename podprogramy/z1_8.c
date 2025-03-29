@@ -1,36 +1,36 @@
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
+int set_digits(int n, char* digits) {
+    int i = 0;
+    while (n > 0) {
+        digits[i++] = (n % 10);
+        n /= 10;
+    }
+    return i;
+}
+
+int main() {
     int a, b;
 
     printf("Podaj przedzial [a, b]: ");
     scanf("%d %d", &a, &b);
 
-    for (int i = a; i <= b; i++)
-    {
+    char n_digits[10];
+    char square_digits[10];
+
+    for (int i = a; i <= b; i++) {
         int square = i * i;
-        char n_str[12];
-        sprintf(n_str, "%d", i);
-        char square_str[12];
-        sprintf(square_str, "%d", square);
+        int n_len = set_digits(i, n_digits);
+        set_digits(square, square_digits);
 
-        int n_len = strlen(n_str);
-        int square_len = strlen(square_str);
-
-        for (int j = n_len - 1, k = square_len - 1; j >= 0; j--, k--)
-        {
-            if (n_str[j] != square_str[k])
-            {
+        for (int j = 0, k = 0; j < n_len; j++, k++) {
+            if (n_digits[j] != square_digits[k]) {
                 break;
             }
-            if (j == 0)
-            {
+            if (j == n_len - 1) {
                 printf("%d^2 = %d\n", i, square);
             }
         }
-
     }
 
     return 0;

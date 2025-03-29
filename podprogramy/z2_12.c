@@ -97,6 +97,9 @@ int main() {
             case 'Q':
             case 'q':
                 return 0;
+            default:
+                printf("Nieznane polecenie. Sprobuj ponownie.\n");
+                break;
         }
     }
 
